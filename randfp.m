@@ -25,7 +25,19 @@ function b = randfp(t, L, U)
     %
     
     % ==== Replace the code below ====
-    
-    b = '+0.0000b0';
+    mp = unidrnd(2); %determind the minus or plus
+    if (mp == 1)
+	b ='+0.1';
+    else 
+	b = '+0.1';
+    end
+    for i=1:1:t-1
+       	cur = unidrnd(2);
+	cur = cur-1;
+	b = [b num2str(cur)];
+    end
+    b = [b 'b'];
+    expt = L + unidrnd(U-L+1)-1;
+    b = [b num2str(expt)];	
     
 
